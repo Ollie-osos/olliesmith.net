@@ -1,0 +1,95 @@
+/* BASE STYLING FOR CIRRUS */
+* {
+    margin: 0;
+    padding: 0;
+    /* Prevent setting borders from increasing the size of an elrement */
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 100%;
+}
+
+/* Remove bullets from unordered lists */
+ul {
+    list-style: none;
+}
+
+/* Setting up embedded content */
+img,
+embed,
+object,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero.fullscreen video {
+    height: 100%;
+    object-fit: fill;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+iframe {
+    outline: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section {
+    display: block;
+}
+
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+label {
+    display: inline-block;
+    margin: 0.25rem 0;
+}
+
+fieldset {
+    padding: 1rem;
+
+    legend {
+        font-weight: bold;
+    }
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Selection Color */
+::selection {
+    background-color: var(--cirrus-select-bg);
+}
+
+/* When focusing any element */
+:focus {
+    box-shadow: 0 0 0.1rem 0.15rem rgba(240, 61, 77, 0.13);
+    outline: none;
+}

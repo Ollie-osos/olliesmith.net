@@ -1,0 +1,158 @@
+@import '../../helpers/_selectors';
+@import '../../helpers/_size.scss';
+@import '../core/theme.scss';
+
+@mixin section-space() {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @include screen-above('md') {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    @include screen-above('lg') {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+@mixin mobile-center() {
+   text-align: center;
+    @include screen-above('md') { 
+        text-align: left;
+    }
+}
+
+@mixin small-space() {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @include screen-above('md') {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    @include screen-above('lg') {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+@mixin no-space() {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+// offset page by header bar
+.page {
+    // margin-top: 58px;
+    margin-top: 45px;
+
+    @include screen-above('md') {
+        margin-top: 95px;
+    }
+
+    // overflow: hidden;
+    &.background-image {
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include screen-above('md') {
+            background-repeat: repeat-y;
+            background-size: 100% auto;
+        }
+    }
+}
+
+.bg-aqua-light,
+.section.aqua-light {
+    background-color: $aqua-light;
+}
+
+.bg-green-light,
+.section.green-light {
+    background-color: $green-light;
+}
+
+
+section {
+    @include section-space();
+    overflow-wrap: break-word;
+
+    &.section-small {
+        @include small-space();
+    }
+
+    &.no-space {
+        @include no-space();
+    }
+
+    &.hero {
+        @include section-space();
+        text-align: center;
+
+        // overflow-x: hidden;
+        @include screen-above('md') {
+            text-align: left;
+        }
+    }
+
+    &.background-image {
+        @include section-space();
+
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include screen-above('sm') {
+            background-repeat: repeat-y;
+            background-size: 100% auto;
+        }
+
+        &.full {
+            height: 300px;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-attachment: fixed;
+            background-position: center;
+
+            @include screen-above('sm') {
+                height: 500px;
+            }
+
+            @include screen-above('md') {
+                background-attachment: unset
+            }
+
+            @include screen-above('lg') {
+                height: 700px;
+            }
+        }
+
+        &.cover {
+            background-repeat: no-repeat;
+            background-size: cover; 
+            background-position: center;
+        }
+
+        &.still {
+            background-attachment: fixed;
+        }
+    }
+}
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    height: 0;
+}
+
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+}

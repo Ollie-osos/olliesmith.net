@@ -1,0 +1,54 @@
+# Dependency directories
+node_modules/
+
+# TypeScript v1 declaration files
+typings/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Output of 'npm pack'
+*.tgza# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+.cache/
+.next/
+.nuxt/
+build/
+out/
+
+# Environment
+.env
+.env.test
+
+# npm / yarn artifacts
+.npm
+.yarn-integrity
+*.tgz
+
+# TypeScript
+typings/
+*.tsbuildinfo
+
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
