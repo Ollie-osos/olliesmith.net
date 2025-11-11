@@ -19,7 +19,7 @@
 
 @mixin mobile-center() {
    text-align: center;
-    @include screen-above('md') { 
+    @include screen-above('md') {  
         text-align: left;
     }
 }

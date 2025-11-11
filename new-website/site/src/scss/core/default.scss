@@ -1,95 +1,210 @@
-/* BASE STYLING FOR CIRRUS */
+@import '../../helpers/_size.scss';
+
+/*
+  Font mixins
+  - use `@include use-romie()` or `@include use-avenir-next()` to apply the font-family.
+  - call `@include romie-face()` / `@include avenir-face()` once to emit @font-face rules.
+*/
+
+@mixin romie-face() {
+  @font-face {
+    font-family: 'Romie';
+    src: url('../fonts/Romie-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@mixin avenir-face() {
+  @font-face {
+    font-family: 'Avenir Next';
+    src: url('../fonts/Avenir Next.ttc') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@mixin use-romie() {
+  font-family: 'Romie', Georgia, serif;
+}
+
+@mixin use-avenir-next() {
+  font-family: 'Avenir Next', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Ensure font-face declarations exist once in the compiled CSS */
+@include romie-face();
+@include avenir-face();
+
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    /* Prevent setting borders from increasing the size of an elrement */
-    box-sizing: border-box;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    border: none;
-    height: 100%;
+  @include use-avenir-next();
+  background: white;
+  color: #333;
 }
 
-/* Remove bullets from unordered lists */
-ul {
-    list-style: none;
+h1, h2, h3, h4, h5, h6 {
+  @include use-romie();
 }
 
-/* Setting up embedded content */
-img,
-embed,
-object,
-video {
-    max-width: 100%;
-    height: auto;
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
 }
 
-.hero.fullscreen video {
-    height: 100%;
-    object-fit: fill;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
+.logo-placeholder {
+  width: 120px;
+  height: 50px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  color: #999;
 }
 
-iframe {
-    outline: 0;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+/* Desktop Navigation */
+nav.desktop-nav {
+  display: flex;
+  gap: 2.5rem;
+
+  a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    font-weight: 500;
+  }
+
+  a:hover { color: #666; }
 }
 
-article,
-aside,
-figure,
-footer,
-header,
-hgroup,
-section {
+/* Burger Menu */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  z-index: 1001;
+
+  span {
     display: block;
+    width: 100%;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s ease;
+  }
+
+  &.active {
+    span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+  }
 }
 
-input,
-optgroup,
-select,
-textarea {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
+/* Mobile Navigation */
+nav.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 999;
+  padding: 6rem 2rem 2rem;
+
+  &.active { right: 0; }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Romie', Georgia, serif;
+    transition: color 0.3s ease;
+  }
+
+  a:hover { color: #666; }
 }
 
-label {
-    display: inline-block;
-    margin: 0.25rem 0;
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 998;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
-fieldset {
-    padding: 1rem;
+/* Main Content */
+main { margin-top: 90px; }
 
-    legend {
-        font-weight: bold;
-    }
+section { min-height: 100vh; padding: 4rem 0; }
+
+/* Work Section */
+#work { padding-top: 6rem; }
+
+.work-image {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1;
+  background: #f5f5f5;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #999;
 }
 
-[hidden] {
-    display: none !important;
+/* Responsive */
+@include screen-below('sm') {
+  nav.desktop-nav { display: none; }
+  .burger-menu { display: flex; }
+  .header-container { padding: 0 1rem; }
 }
 
-/* Selection Color */
-::selection {
-    background-color: var(--cirrus-select-bg);
-}
 
-/* When focusing any element */
-:focus {
-    box-shadow: 0 0 0.1rem 0.15rem rgba(240, 61, 77, 0.13);
-    outline: none;
-}
