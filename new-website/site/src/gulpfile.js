@@ -90,7 +90,7 @@ export function html() {
   return gulp
     .src(paths.pug)
     .pipe(pug({ pretty: true }))
-    .pipe(gulp.dest(`${paths.dist}/html`))
+    .pipe(gulp.dest(`${paths.dist}`))
     .pipe(browserSync.stream());
 }
 
@@ -151,7 +151,7 @@ export function minifyCore() {
 export function serve() {
   browserSync.init({
     server: {
-      baseDir: `${paths.dist}/html`,
+      baseDir: `${paths.dist}`,
     },
     index: 'index.html',
     open: true,
