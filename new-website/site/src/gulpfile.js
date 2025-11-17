@@ -8,8 +8,8 @@ import gulpSass from 'gulp-sass';
 import cleanCSS from 'gulp-clean-css';
 import concat from 'gulp-concat';
 import pug from 'gulp-pug';
-import uglify from 'gulp-uglify';
-import image from 'gulp-image';
+import terser from 'gulp-terser';
+import imagemin from 'gulp-imagemin';
 import header from 'gulp-header';
 import size from 'gulp-size';
 import browserSyncLib from 'browser-sync';
@@ -100,7 +100,7 @@ export function html() {
 export function images() {
   return gulp
     .src(paths.img)
-    .pipe(image())
+    .pipe(imagemin())
     .pipe(gulp.dest(`${paths.dist}/img`))
     .pipe(browserSync.stream());
 }
@@ -112,7 +112,7 @@ export function scripts() {
   return gulp
     .src(paths.js)
     .pipe(concat('scripts.js'))
-    // .pipe(uglify()) // uncomment if you want JS minification
+    .pipe(terser()) // uncomment if you want JS minification
     .pipe(gulp.dest(`${paths.dist}/js`))
     .pipe(browserSync.stream());
 }

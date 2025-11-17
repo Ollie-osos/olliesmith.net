@@ -13,11 +13,11 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-header": "^2.0.9",
-    "gulp-image": "^6.3.1",
+    "gulp-imagemin": "^9.2.0",
     "gulp-pug": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-size": "^5.0.0",
-    "gulp-uglify": "^3.0.2",
+    "gulp-terser": "^2.1.0",
     "sass": "^1.83.0"
   }
 }

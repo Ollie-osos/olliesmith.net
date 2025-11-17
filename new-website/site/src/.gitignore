@@ -15,7 +15,6 @@ typings/
 node_modules/
 
 # Build outputs
-dist/
 .cache/
 .next/
 .nuxt/
@@ -51,4 +50,3 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
