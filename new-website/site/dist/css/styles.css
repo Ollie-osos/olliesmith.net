@@ -3,34 +3,12 @@
 * Stanley Lim, Copyright 2025
 * https://spiderpig86.github.io/Cirrus
 */
-/* Spacing */
-/* Fonts */
-/* Grid Count */
-/* Grid Percents */
-/* Tab Sizes */
-/* Media Queries */
-/* Smaller than the defined pixels are the dimensions for that range */
-/*
-  Font mixins
-  - use `@include use-romie()` or `@include use-avenir-next()` to apply the font-family.
-  - call `@include romie-face()` / `@include avenir-face()` once to emit @font-face rules.
-*/
-/* Ensure font-face declarations exist once in the compiled CSS */
 @font-face {
   font-family: "Romie";
-  src: url("../fonts/Romie-Regular.otf") format("opentype");
+  src: url("/fonts/romie-regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
-@font-face {
-  font-family: "Avenir Next";
-  src: url("../fonts/Avenir Next.ttc") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -62,7 +40,8 @@ header {
   padding: 1.5rem 0;
   border-bottom: 1px solid #e0e0e0;
 }
-header .header-container {
+
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -87,6 +66,7 @@ nav.desktop-nav {
   display: flex;
   gap: 2.5rem;
 }
+
 nav.desktop-nav a {
   text-decoration: none;
   color: #333;
@@ -94,6 +74,7 @@ nav.desktop-nav a {
   transition: color 0.3s ease;
   font-weight: 500;
 }
+
 nav.desktop-nav a:hover {
   color: #666;
 }
@@ -108,6 +89,7 @@ nav.desktop-nav a:hover {
   height: 24px;
   z-index: 1001;
 }
+
 .burger-menu span {
   display: block;
   width: 100%;
@@ -115,12 +97,15 @@ nav.desktop-nav a:hover {
   background: #333;
   transition: all 0.3s ease;
 }
+
 .burger-menu.active span:nth-child(1) {
   transform: rotate(45deg) translate(8px, 8px);
 }
+
 .burger-menu.active span:nth-child(2) {
   opacity: 0;
 }
+
 .burger-menu.active span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -7px);
 }
@@ -138,9 +123,11 @@ nav.mobile-nav {
   z-index: 999;
   padding: 6rem 2rem 2rem;
 }
+
 nav.mobile-nav.active {
   right: 0;
 }
+
 nav.mobile-nav a {
   display: block;
   text-decoration: none;
@@ -150,6 +137,7 @@ nav.mobile-nav a {
   font-family: "Romie", Georgia, serif;
   transition: color 0.3s ease;
 }
+
 nav.mobile-nav a:hover {
   color: #666;
 }
@@ -167,6 +155,7 @@ nav.mobile-nav a:hover {
   transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 998;
 }
+
 .overlay.active {
   opacity: 1;
   visibility: visible;
@@ -187,21 +176,162 @@ section {
   padding-top: 6rem;
 }
 
-.work-image {
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: normal;
+}
+
+.work-grid {
+  position: relative;
+}
+
+/* Work Item */
+.work-item {
+  margin-bottom: 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.work-item.expanded {
+  order: -1;
+  margin-bottom: 3rem;
+}
+
+/* Work Card */
+.work-card {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card-image {
   width: 100%;
-  max-width: 600px;
   aspect-ratio: 1;
+  overflow: hidden;
   background: #f5f5f5;
-  margin: 2rem auto;
+  position: relative;
+}
+
+.work-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.work-card:hover .work-card-image img {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+.work-card-title {
+  font-family: "Romie", Georgia, serif;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+}
+
+.work-card:hover .work-card-title {
+  color: #666;
+}
+
+/* Work Details */
+.work-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  width: 100%;
+}
+
+.work-item.expanded .work-details {
+  max-height: 2000px;
+}
+
+.work-item.expanded .work-card {
+  cursor: default;
+}
+
+.work-details-content {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #fafafa;
+  border-radius: 4px;
+}
+
+.work-details-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.work-details-header h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
   color: #999;
+  transition: color 0.3s ease;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.work-details-body {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.work-details-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.work-details-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.work-details-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.work-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.work-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.work-meta-item {
+  font-size: 1rem;
+}
+
+.work-meta-item strong {
+  font-weight: 600;
 }
 
 /* Responsive */
-@media screen and (max-width: 767px) {
+@media (max-width: 768px) {
   nav.desktop-nav {
     display: none;
   }
@@ -210,1371 +340,5 @@ section {
   }
   .header-container {
     padding: 0 1rem;
-  }
-}
-/*
-    Group selectors that share common styling.
-*/
-/* Spacing */
-/* Fonts */
-/* Grid Count */
-/* Grid Percents */
-/* Tab Sizes */
-/* Media Queries */
-/* Smaller than the defined pixels are the dimensions for that range */
-/*
-  Functions
-*/
-/*
-    Converts a given hex value to RGB.
-*/
-/*
-    Generates delimited class name prefix.
-*/
-/*
-    Fetch feature flag for different utility class types for generating viewport classes (e.g., u-flex-sm, u-flex-md, etc.).
-*/
-/* Spacing */
-/* Fonts */
-/* Grid Count */
-/* Grid Percents */
-/* Tab Sizes */
-/* Media Queries */
-/* Smaller than the defined pixels are the dimensions for that range */
-/* Color scheme for Cirrus */
-/* v2 Colors */
-:root {
-  /* v1 Colors */
-  --cirrus-fg: #374054;
-  --cirrus-bg: #fff;
-  --cirrus-primary: #f03d4d;
-  --cirrus-primary-rgb: 240, 61, 77;
-  --cirrus-primary-light: #ffdadd;
-  --cirrus-accent-hover: #d62939;
-  --cirrus-accent-border: #c21b2b;
-  --cirrus-light: #f6f9fc;
-  --cirrus-light-gray: #f8f9fa;
-  --cirrus-gray: #d5d7dc;
-  --cirrus-dark-gray: #909090;
-  --cirrus-dark: #363636;
-  --cirrus-link: #5e5cc7;
-  --cirrus-link-dark: #4643e2;
-  --cirrus-info: #2972fa;
-  --cirrus-success: #0dd157;
-  --cirrus-success-rgb: 13, 209, 87;
-  --cirrus-warning: #fab633;
-  --cirrus-danger: #fb4143;
-  --cirrus-light-hover: rgb(207.75, 223.5, 239.25);
-  --cirrus-dark-hover: rgb(79.5, 79.5, 79.5);
-  --cirrus-info-hover: rgb(16.0821917808, 97.5821917808, 249.4178082192);
-  --cirrus-link-hover: #f8f7ff;
-  --cirrus-success-hover: rgb(11.5067567568, 184.9932432432, 77.0067567568);
-  --cirrus-warning-hover: rgb(249.3899521531, 173.0933014354, 26.1100478469);
-  --cirrus-danger-hover: rgb(234.5618556701, 4.9381443299, 7.4072164948);
-  --cirrus-select-bg: rgba(0, 161, 255, 0.2);
-  --cirrus-code-bg: var(--cirrus-primary-light);
-  --cirrus-code-fg: #dc4753;
-  --cirrus-form-group-bg: var(--cirrus-light-gray);
-  --cirrus-form-group-fg: var(--cirrus-dark-gray);
-  --toast-primary-bg: rgba(49, 59, 80, 0.9);
-  --animation-duration: 0.2s;
-  --focus-opacity: 0.55;
-  --space-size: 0.5rem;
-  --font-size-xs: 0.7rem;
-  --font-size-s: 0.85rem;
-  --font-size-m: 1rem;
-  --font-size-l: 1.35rem;
-  --font-size-xl: 1.75rem;
-}
-
-.page {
-  margin-top: 45px;
-}
-@media screen and (min-width: 1024px) {
-  .page {
-    margin-top: 95px;
-  }
-}
-.page.background-image {
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-@media screen and (min-width: 1024px) {
-  .page.background-image {
-    background-repeat: repeat-y;
-    background-size: 100% auto;
-  }
-}
-
-.bg-aqua-light,
-.section.aqua-light {
-  background-color: #DAF7FA;
-}
-
-.bg-green-light,
-.section.green-light {
-  background-color: #AFF5E0;
-}
-
-section {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-@media screen and (min-width: 1024px) {
-  section {
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  section {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-}
-section {
-  overflow-wrap: break-word;
-}
-section.section-small {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-@media screen and (min-width: 1024px) {
-  section.section-small {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  section.section-small {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-}
-section.no-space {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-section.hero {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-@media screen and (min-width: 1024px) {
-  section.hero {
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  section.hero {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-}
-section.hero {
-  text-align: center;
-}
-@media screen and (min-width: 1024px) {
-  section.hero {
-    text-align: left;
-  }
-}
-section.background-image {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-@media screen and (min-width: 1024px) {
-  section.background-image {
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  section.background-image {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-}
-section.background-image {
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-@media screen and (min-width: 768px) {
-  section.background-image {
-    background-repeat: repeat-y;
-    background-size: 100% auto;
-  }
-}
-section.background-image.full {
-  height: 300px;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-attachment: fixed;
-  background-position: center;
-}
-@media screen and (min-width: 768px) {
-  section.background-image.full {
-    height: 500px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  section.background-image.full {
-    background-attachment: unset;
-  }
-}
-@media screen and (min-width: 1280px) {
-  section.background-image.full {
-    height: 700px;
-  }
-}
-section.background-image.cover {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-section.background-image.still {
-  background-attachment: fixed;
-}
-
-.videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  /* 16:9 */
-  height: 0;
-}
-
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 40px;
-}
-/*
-  Functions
-*/
-/*
-    Converts a given hex value to RGB.
-*/
-/*
-    Generates delimited class name prefix.
-*/
-/*
-    Fetch feature flag for different utility class types for generating viewport classes (e.g., u-flex-sm, u-flex-md, etc.).
-*/
-/* Spacing */
-/* Fonts */
-/* Grid Count */
-/* Grid Percents */
-/* Tab Sizes */
-/* Media Queries */
-/* Smaller than the defined pixels are the dimensions for that range */
-/* Color scheme for Cirrus */
-/* v2 Colors */
-:root {
-  /* v1 Colors */
-  --cirrus-fg: #374054;
-  --cirrus-bg: #fff;
-  --cirrus-primary: #f03d4d;
-  --cirrus-primary-rgb: 240, 61, 77;
-  --cirrus-primary-light: #ffdadd;
-  --cirrus-accent-hover: #d62939;
-  --cirrus-accent-border: #c21b2b;
-  --cirrus-light: #f6f9fc;
-  --cirrus-light-gray: #f8f9fa;
-  --cirrus-gray: #d5d7dc;
-  --cirrus-dark-gray: #909090;
-  --cirrus-dark: #363636;
-  --cirrus-link: #5e5cc7;
-  --cirrus-link-dark: #4643e2;
-  --cirrus-info: #2972fa;
-  --cirrus-success: #0dd157;
-  --cirrus-success-rgb: 13, 209, 87;
-  --cirrus-warning: #fab633;
-  --cirrus-danger: #fb4143;
-  --cirrus-light-hover: rgb(207.75, 223.5, 239.25);
-  --cirrus-dark-hover: rgb(79.5, 79.5, 79.5);
-  --cirrus-info-hover: rgb(16.0821917808, 97.5821917808, 249.4178082192);
-  --cirrus-link-hover: #f8f7ff;
-  --cirrus-success-hover: rgb(11.5067567568, 184.9932432432, 77.0067567568);
-  --cirrus-warning-hover: rgb(249.3899521531, 173.0933014354, 26.1100478469);
-  --cirrus-danger-hover: rgb(234.5618556701, 4.9381443299, 7.4072164948);
-  --cirrus-select-bg: rgba(0, 161, 255, 0.2);
-  --cirrus-code-bg: var(--cirrus-primary-light);
-  --cirrus-code-fg: #dc4753;
-  --cirrus-form-group-bg: var(--cirrus-light-gray);
-  --cirrus-form-group-fg: var(--cirrus-dark-gray);
-  --toast-primary-bg: rgba(49, 59, 80, 0.9);
-  --animation-duration: 0.2s;
-  --focus-opacity: 0.55;
-  --space-size: 0.5rem;
-  --font-size-xs: 0.7rem;
-  --font-size-s: 0.85rem;
-  --font-size-m: 1rem;
-  --font-size-l: 1.35rem;
-  --font-size-xl: 1.75rem;
-}
-/*
-  Functions
-*/
-/*
-    Converts a given hex value to RGB.
-*/
-/*
-    Generates delimited class name prefix.
-*/
-/*
-    Fetch feature flag for different utility class types for generating viewport classes (e.g., u-flex-sm, u-flex-md, etc.).
-*/
-/* Spacing */
-/* Fonts */
-/* Grid Count */
-/* Grid Percents */
-/* Tab Sizes */
-/* Media Queries */
-/* Smaller than the defined pixels are the dimensions for that range */
-.u-left {
-  clear: left !important;
-}
-
-.u-right {
-  clear: right !important;
-}
-
-.u-both {
-  clear: both !important;
-}
-
-@media screen and (min-width: 640px) {
-  .u-left-sm {
-    clear: left !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-right-sm {
-    clear: right !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-both-sm {
-    clear: both !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-left-md {
-    clear: left !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-right-md {
-    clear: right !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-both-md {
-    clear: both !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-left-lg {
-    clear: left !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-right-lg {
-    clear: right !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-both-lg {
-    clear: both !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-left-xl {
-    clear: left !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-right-xl {
-    clear: right !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-both-xl {
-    clear: both !important;
-  }
-}
-/*
-   When using floats, clearfix allows the container to automatically resize so that
-   other elements are not blocked by children.
-*/
-.u-clearfix:after {
-  clear: both !important;
-  content: " ";
-  display: table !important;
-}
-/*
-  Functions
-*/
-/*
-    Converts a given hex value to RGB.
-*/
-/*
-    Generates delimited class name prefix.
-*/
-/*
-    Fetch feature flag for different utility class types for generating viewport classes (e.g., u-flex-sm, u-flex-md, etc.).
-*/
-/* Spacing */
-/* Fonts */
-/* Grid Count */
-/* Grid Percents */
-/* Tab Sizes */
-/* Media Queries */
-/* Smaller than the defined pixels are the dimensions for that range */
-.u-none {
-  display: none !important;
-}
-
-.u-inline {
-  display: inline !important;
-}
-
-.u-inline-block {
-  display: inline-block !important;
-}
-
-.u-block {
-  display: block !important;
-}
-
-.u-flex {
-  display: flex !important;
-}
-
-.u-inline-flex {
-  display: inline-flex !important;
-}
-
-.u-table {
-  display: table !important;
-}
-
-.u-table-row {
-  display: table-row !important;
-}
-
-.u-table-column {
-  display: table-column !important;
-}
-
-.u-table-cell {
-  display: table-cell !important;
-}
-
-@media screen and (min-width: 640px) {
-  .u-none-sm {
-    display: none !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-inline-sm {
-    display: inline !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-inline-block-sm {
-    display: inline-block !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-block-sm {
-    display: block !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-flex-sm {
-    display: flex !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-inline-flex-sm {
-    display: inline-flex !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-table-sm {
-    display: table !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-table-row-sm {
-    display: table-row !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-table-column-sm {
-    display: table-column !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-table-cell-sm {
-    display: table-cell !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-none-md {
-    display: none !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-inline-md {
-    display: inline !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-inline-block-md {
-    display: inline-block !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-block-md {
-    display: block !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-flex-md {
-    display: flex !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-inline-flex-md {
-    display: inline-flex !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-table-md {
-    display: table !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-table-row-md {
-    display: table-row !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-table-column-md {
-    display: table-column !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-table-cell-md {
-    display: table-cell !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-none-lg {
-    display: none !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-inline-lg {
-    display: inline !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-inline-block-lg {
-    display: inline-block !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-block-lg {
-    display: block !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-flex-lg {
-    display: flex !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-inline-flex-lg {
-    display: inline-flex !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-table-lg {
-    display: table !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-table-row-lg {
-    display: table-row !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-table-column-lg {
-    display: table-column !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-table-cell-lg {
-    display: table-cell !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-none-xl {
-    display: none !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-inline-xl {
-    display: inline !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-inline-block-xl {
-    display: inline-block !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-block-xl {
-    display: block !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-flex-xl {
-    display: flex !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-inline-flex-xl {
-    display: inline-flex !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-table-xl {
-    display: table !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-table-row-xl {
-    display: table-row !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-table-column-xl {
-    display: table-column !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-table-cell-xl {
-    display: table-cell !important;
-  }
-}
-/*
-  Functions
-*/
-/*
-    Converts a given hex value to RGB.
-*/
-/*
-    Generates delimited class name prefix.
-*/
-/*
-    Fetch feature flag for different utility class types for generating viewport classes (e.g., u-flex-sm, u-flex-md, etc.).
-*/
-/* Spacing */
-/* Fonts */
-/* Grid Count */
-/* Grid Percents */
-/* Tab Sizes */
-/* Media Queries */
-/* Smaller than the defined pixels are the dimensions for that range */
-.u-flex-row {
-  flex-direction: row !important;
-}
-
-.u-flex-row-reverse {
-  flex-direction: row-reverse !important;
-}
-
-.u-flex-column {
-  flex-direction: column !important;
-}
-
-.u-flex-column-reverse {
-  flex-direction: column-reverse !important;
-}
-
-@media screen and (min-width: 640px) {
-  .u-flex-row-sm {
-    flex-direction: row !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-flex-row-reverse-sm {
-    flex-direction: row-reverse !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-flex-column-sm {
-    flex-direction: column !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-flex-column-reverse-sm {
-    flex-direction: column-reverse !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-flex-row-md {
-    flex-direction: row !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-flex-row-reverse-md {
-    flex-direction: row-reverse !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-flex-column-md {
-    flex-direction: column !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-flex-column-reverse-md {
-    flex-direction: column-reverse !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-flex-row-lg {
-    flex-direction: row !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-flex-row-reverse-lg {
-    flex-direction: row-reverse !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-flex-column-lg {
-    flex-direction: column !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-flex-column-reverse-lg {
-    flex-direction: column-reverse !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-flex-row-xl {
-    flex-direction: row !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-flex-row-reverse-xl {
-    flex-direction: row-reverse !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-flex-column-xl {
-    flex-direction: column !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-flex-column-reverse-xl {
-    flex-direction: column-reverse !important;
-  }
-}
-.u-justify-flex-start {
-  justify-content: flex-start !important;
-}
-
-.u-justify-center {
-  justify-content: center !important;
-}
-
-.u-justify-flex-end {
-  justify-content: flex-end !important;
-}
-
-.u-justify-space-between {
-  justify-content: space-between !important;
-}
-
-.u-justify-space-around {
-  justify-content: space-around !important;
-}
-
-.u-justify-space-evenly {
-  justify-content: space-evenly !important;
-}
-
-@media screen and (min-width: 640px) {
-  .u-justify-flex-start-sm {
-    justify-content: flex-start !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-justify-center-sm {
-    justify-content: center !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-justify-flex-end-sm {
-    justify-content: flex-end !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-justify-space-between-sm {
-    justify-content: space-between !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-justify-space-around-sm {
-    justify-content: space-around !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-justify-space-evenly-sm {
-    justify-content: space-evenly !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-justify-flex-start-md {
-    justify-content: flex-start !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-justify-center-md {
-    justify-content: center !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-justify-flex-end-md {
-    justify-content: flex-end !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-justify-space-between-md {
-    justify-content: space-between !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-justify-space-around-md {
-    justify-content: space-around !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-justify-space-evenly-md {
-    justify-content: space-evenly !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-justify-flex-start-lg {
-    justify-content: flex-start !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-justify-center-lg {
-    justify-content: center !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-justify-flex-end-lg {
-    justify-content: flex-end !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-justify-space-between-lg {
-    justify-content: space-between !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-justify-space-around-lg {
-    justify-content: space-around !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-justify-space-evenly-lg {
-    justify-content: space-evenly !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-justify-flex-start-xl {
-    justify-content: flex-start !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-justify-center-xl {
-    justify-content: center !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-justify-flex-end-xl {
-    justify-content: flex-end !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-justify-space-between-xl {
-    justify-content: space-between !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-justify-space-around-xl {
-    justify-content: space-around !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-justify-space-evenly-xl {
-    justify-content: space-evenly !important;
-  }
-}
-.u-items-stretch {
-  align-items: stretch !important;
-}
-
-.u-items-flex-start {
-  align-items: flex-start !important;
-}
-
-.u-items-center {
-  align-items: center !important;
-}
-
-.u-items-flex-end {
-  align-items: flex-end !important;
-}
-
-.u-items-baseline {
-  align-items: baseline !important;
-}
-
-@media screen and (min-width: 640px) {
-  .u-items-stretch-sm {
-    align-items: stretch !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-items-flex-start-sm {
-    align-items: flex-start !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-items-center-sm {
-    align-items: center !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-items-flex-end-sm {
-    align-items: flex-end !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-items-baseline-sm {
-    align-items: baseline !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-items-stretch-md {
-    align-items: stretch !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-items-flex-start-md {
-    align-items: flex-start !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-items-center-md {
-    align-items: center !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-items-flex-end-md {
-    align-items: flex-end !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-items-baseline-md {
-    align-items: baseline !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-items-stretch-lg {
-    align-items: stretch !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-items-flex-start-lg {
-    align-items: flex-start !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-items-center-lg {
-    align-items: center !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-items-flex-end-lg {
-    align-items: flex-end !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-items-baseline-lg {
-    align-items: baseline !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-items-stretch-xl {
-    align-items: stretch !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-items-flex-start-xl {
-    align-items: flex-start !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-items-center-xl {
-    align-items: center !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-items-flex-end-xl {
-    align-items: flex-end !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-items-baseline-xl {
-    align-items: baseline !important;
-  }
-}
-/*
-  Functions
-*/
-/*
-    Converts a given hex value to RGB.
-*/
-/*
-    Generates delimited class name prefix.
-*/
-/*
-    Fetch feature flag for different utility class types for generating viewport classes (e.g., u-flex-sm, u-flex-md, etc.).
-*/
-/* Spacing */
-/* Fonts */
-/* Grid Count */
-/* Grid Percents */
-/* Tab Sizes */
-/* Media Queries */
-/* Smaller than the defined pixels are the dimensions for that range */
-/* UTILS */
-/* Utility classes to help solve some very annoying issues */
-.u-pull-left {
-  float: left !important;
-}
-
-.u-pull-right {
-  float: right !important;
-}
-
-.u-text-justify {
-  text-align: justify !important;
-}
-
-.u-text-left {
-  text-align: left !important;
-}
-
-.u-text-right {
-  text-align: right !important;
-}
-
-.u-text-center {
-  text-align: center !important;
-}
-
-.u-text-ellipsis {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.u-text-break {
-  hyphens: auto;
-  word-break: break-word;
-  word-wrap: break-word;
-}
-
-/* Center element - best used for hero bodies or text */
-.u-center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-.u-center-alt,
-.u-center-alt:hover,
-.u-center-alt:active {
-  /* If flexbox method fails, this works for elements with unknown dimensions */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.u-overlay {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  position: absolute;
-}
-
-.u-disabled {
-  cursor: not-allowed !important;
-  pointer-events: none !important;
-}
-
-.u-unselectable {
-  -webkit-touch-callout: none !important;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  user-select: none !important;
-}
-
-/* Round the corners of the element */
-.u-round {
-  border-radius: 0.25rem !important;
-}
-
-/* Turns element into a circle */
-.u-circle {
-  border-radius: 50% !important;
-}
-
-.u-no-outline {
-  outline: 0px !important;
-}
-
-.u-shadow {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.13), 0 1px 2px 0 rgba(0, 0, 0, 0.07) !important;
-}
-/*
-  Functions
-*/
-/*
-    Converts a given hex value to RGB.
-*/
-/*
-    Generates delimited class name prefix.
-*/
-/*
-    Fetch feature flag for different utility class types for generating viewport classes (e.g., u-flex-sm, u-flex-md, etc.).
-*/
-/* Spacing */
-/* Fonts */
-/* Grid Count */
-/* Grid Percents */
-/* Tab Sizes */
-/* Media Queries */
-/* Smaller than the defined pixels are the dimensions for that range */
-.u-overflow-auto {
-  overflow: auto !important;
-}
-
-.u-overflow-hidden {
-  overflow: hidden !important;
-}
-
-.u-overflow-visible {
-  overflow: visible !important;
-}
-
-.u-overflow-scroll {
-  overflow: scroll !important;
-}
-
-.u-overflow-x-auto {
-  overflow-x: auto !important;
-}
-
-.u-overflow-x-hidden {
-  overflow-x: hidden !important;
-}
-
-.u-overflow-x-visible {
-  overflow-x: visible !important;
-}
-
-.u-overflow-x-scroll {
-  overflow-x: scroll !important;
-}
-
-.u-overflow-y-auto {
-  overflow-y: auto !important;
-}
-
-.u-overflow-y-hidden {
-  overflow-y: hidden !important;
-}
-
-.u-overflow-y-visible {
-  overflow-y: visible !important;
-}
-
-.u-overflow-y-scroll {
-  overflow-y: scroll !important;
-}
-/*
-  Functions
-*/
-/*
-    Converts a given hex value to RGB.
-*/
-/*
-    Generates delimited class name prefix.
-*/
-/*
-    Fetch feature flag for different utility class types for generating viewport classes (e.g., u-flex-sm, u-flex-md, etc.).
-*/
-/* Spacing */
-/* Fonts */
-/* Grid Count */
-/* Grid Percents */
-/* Tab Sizes */
-/* Media Queries */
-/* Smaller than the defined pixels are the dimensions for that range */
-.u-static {
-  position: static !important;
-}
-
-.u-fixed {
-  position: fixed !important;
-}
-
-.u-absolute {
-  position: absolute !important;
-}
-
-.u-relative {
-  position: relative !important;
-}
-
-.u-sticky {
-  position: sticky !important;
-}
-
-@media screen and (min-width: 640px) {
-  .u-static-sm {
-    position: static !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-fixed-sm {
-    position: fixed !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-absolute-sm {
-    position: absolute !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-relative-sm {
-    position: relative !important;
-  }
-}
-@media screen and (min-width: 640px) {
-  .u-sticky-sm {
-    position: sticky !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-static-md {
-    position: static !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-fixed-md {
-    position: fixed !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-absolute-md {
-    position: absolute !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-relative-md {
-    position: relative !important;
-  }
-}
-@media screen and (min-width: 768px) {
-  .u-sticky-md {
-    position: sticky !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-static-lg {
-    position: static !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-fixed-lg {
-    position: fixed !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-absolute-lg {
-    position: absolute !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-relative-lg {
-    position: relative !important;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .u-sticky-lg {
-    position: sticky !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-static-xl {
-    position: static !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-fixed-xl {
-    position: fixed !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-absolute-xl {
-    position: absolute !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-relative-xl {
-    position: relative !important;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .u-sticky-xl {
-    position: sticky !important;
   }
 }

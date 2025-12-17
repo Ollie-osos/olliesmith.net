@@ -37,7 +37,7 @@ const banner = `/*
 // ----------------------------------------
 export function compile() {
   return gulp
-    .src(['scss/core/default.scss', paths.scss])
+    .src(['scss/styles.scss', paths.scss])
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('styles.css'))
     .pipe(header(banner))
