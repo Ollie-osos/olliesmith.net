@@ -11,6 +11,25 @@
 /* Media Queries */
 /* Smaller than the defined pixels are the dimensions for that range */
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@font-face {
+  font-family: "Romie";
+  src: url("/fonts/Romie-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.gold-text {
+  color: #c5a47e;
+}
+
+/* Spacing */
+/* Fonts */
+/* Grid Count */
+/* Grid Percents */
+/* Tab Sizes */
+/* Media Queries */
+/* Smaller than the defined pixels are the dimensions for that range */
 @font-face {
   font-family: "Romie";
   src: url("/fonts/Romie-Regular.otf") format("opentype");
@@ -31,15 +50,13 @@ header {
   z-index: 1000;
   padding: 1.5rem 0;
 }
-
-.header-container {
+header .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
 }
-
-.logo-placeholder {
+header .logo-placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,31 +64,31 @@ header {
   color: #000;
   font-family: "Romie", sans-serif;
 }
-.logo-placeholder a {
+header .logo-placeholder a {
   color: #000;
   text-decoration: none;
 }
-.logo-placeholder a:hover {
+header .logo-placeholder a:hover {
   text-decoration: none;
 }
-.logo-placeholder a:focus {
+header .logo-placeholder a:focus {
   outline: none;
 }
-
-/* Desktop Navigation */
-nav.desktop-nav {
+header {
+  /* Desktop Navigation */
+}
+header nav.desktop-nav {
   display: flex;
   gap: 2rem;
 }
-
-nav.desktop-nav a {
+header nav.desktop-nav a {
   text-decoration: none;
   color: #000;
   font-size: 25px;
   transition: all 0.3s ease;
   font-weight: 200;
 }
-nav.desktop-nav a:hover {
+header nav.desktop-nav a:hover {
   color: #a67c52;
 }
 
@@ -157,6 +174,58 @@ nav.mobile-nav a:hover {
   visibility: visible;
 }
 
+/* Spacing */
+/* Fonts */
+/* Grid Count */
+/* Grid Percents */
+/* Tab Sizes */
+/* Media Queries */
+/* Smaller than the defined pixels are the dimensions for that range */
+@font-face {
+  font-family: "Romie";
+  src: url("/fonts/Romie-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.gold-text {
+  color: #c5a47e;
+}
+
+/* footer Styles */
+footer {
+  background: #101B2F;
+  padding: 1.5rem 0;
+  color: white;
+}
+footer .logo-placeholder {
+  display: flex;
+  font-size: 32px;
+  color: white;
+  font-family: "Romie", sans-serif;
+}
+footer .logo-placeholder a {
+  color: white;
+  text-decoration: none;
+}
+footer .logo-placeholder a:hover {
+  text-decoration: none;
+}
+footer .logo-placeholder a:focus {
+  outline: none;
+}
+footer a:hover {
+  color: white;
+  text-decoration: none;
+}
+footer ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+footer .quick-links {
+  justify-content: flex-end;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -200,11 +269,13 @@ body {
 
 a {
   padding: 2px;
-  text-decoration: underline;
+  text-decoration: none;
   transition: all 0.3s;
+  color: #a67c52;
 }
 a:hover {
-  color: #a67c52;
+  color: #000;
+  text-decoration: underline;
   transition: all 0.3s;
 }
 
@@ -218,6 +289,15 @@ h6 {
 }
 
 h1.tagline {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 27px;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  color: #000;
+}
+
+h2.tagline {
   font-family: "Nunito Sans", sans-serif;
   font-size: 27px;
   font-weight: 100;
@@ -424,6 +504,58 @@ section {
   color: #c5a47e;
 }
 
+/* footer Styles */
+footer {
+  background: #101B2F;
+  padding: 1.5rem 0;
+  color: white;
+}
+footer .logo-placeholder {
+  display: flex;
+  font-size: 32px;
+  color: white;
+  font-family: "Romie", sans-serif;
+}
+footer .logo-placeholder a {
+  color: white;
+  text-decoration: none;
+}
+footer .logo-placeholder a:hover {
+  text-decoration: none;
+}
+footer .logo-placeholder a:focus {
+  outline: none;
+}
+footer a:hover {
+  color: white;
+  text-decoration: none;
+}
+footer ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+footer .quick-links {
+  justify-content: flex-end;
+}
+/* Spacing */
+/* Fonts */
+/* Grid Count */
+/* Grid Percents */
+/* Tab Sizes */
+/* Media Queries */
+/* Smaller than the defined pixels are the dimensions for that range */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@font-face {
+  font-family: "Romie";
+  src: url("/fonts/Romie-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.gold-text {
+  color: #c5a47e;
+}
+
 /* Header Styles */
 header {
   position: fixed;
@@ -434,15 +566,13 @@ header {
   z-index: 1000;
   padding: 1.5rem 0;
 }
-
-.header-container {
+header .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
 }
-
-.logo-placeholder {
+header .logo-placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -450,31 +580,31 @@ header {
   color: #000;
   font-family: "Romie", sans-serif;
 }
-.logo-placeholder a {
+header .logo-placeholder a {
   color: #000;
   text-decoration: none;
 }
-.logo-placeholder a:hover {
+header .logo-placeholder a:hover {
   text-decoration: none;
 }
-.logo-placeholder a:focus {
+header .logo-placeholder a:focus {
   outline: none;
 }
-
-/* Desktop Navigation */
-nav.desktop-nav {
+header {
+  /* Desktop Navigation */
+}
+header nav.desktop-nav {
   display: flex;
   gap: 2rem;
 }
-
-nav.desktop-nav a {
+header nav.desktop-nav a {
   text-decoration: none;
   color: #000;
   font-size: 25px;
   transition: all 0.3s ease;
   font-weight: 200;
 }
-nav.desktop-nav a:hover {
+header nav.desktop-nav a:hover {
   color: #a67c52;
 }
 

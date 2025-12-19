@@ -89,4 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             item.style.maxWidth = '';
         });
     });
+    const d = new Date();
+    let year = d.getFullYear();
+    document.getElementById("year").innerHTML = year;
 });

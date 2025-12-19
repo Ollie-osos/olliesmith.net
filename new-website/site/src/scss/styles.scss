@@ -1,6 +1,7 @@
-
+@import './core/_size';
+@import './core/variables';
 @import './core/header';
-
+@import './core/footer';
 
 * {
 	margin: 0;
@@ -39,10 +40,12 @@ body {
 
 a {
     padding: 2px;
-    text-decoration: underline;
+    text-decoration: none;
     transition: all 0.3s;
+	color: $dark-gold;
     &:hover {
-        color: $dark-gold;
+        color: $black;
+		text-decoration: underline;
         transition: all 0.3s;
     }
 }
@@ -57,6 +60,15 @@ h6 {
 }
 
 h1.tagline {
+	font-family: $font-alt;
+	font-size: 27px;
+	font-weight: 300;
+	margin-bottom: 2rem;
+	margin-top: 1rem;
+	color: $black;
+}
+
+h2.tagline {
 	font-family: $font-alt;
 	font-size: 27px;
 	font-weight: 100;
