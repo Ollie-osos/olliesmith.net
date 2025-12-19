@@ -1,266 +1,31 @@
 doctype html
 html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Portfolio
-    
-    //- Cirrus UI CSS
-    link(rel="stylesheet" href="https://unpkg.com/cirrus-ui@0.7.1/dist/cirrus.min.css")
-    //- Custom CSS
-    link(rel="stylesheet" href="/css/styles.css")
-  
-  body
-    //- Header
-    header
-      .header-container
-        .logo-placeholder Logo Placeholder
-        
-        //- Desktop Navigation
-        nav.desktop-nav
-          a(href="#work") Work
-          a(href="#about") About
-          a(href="#contact") Contact 
-        
-        //- Burger Menu
-        .burger-menu#burgerMenu
-          span
-          span
-          span
-    
-    //- Mobile Navigation
-    nav.mobile-nav#mobileNav
-      a(href="#work") Work
-      a(href="#about") About
-      a(href="#contact") Contact
-    
-    //- Overlay
-    .overlay#overlay
-    
-    //- Main Content
-    main
-      //- Work Section
-      section#work
-        .container
-          .row
-            .col-sm-12
-              h2.section-title Work
-          
-          .row.work-grid#workGrid
-            //- Work Item 1
-            .col-sm-12.col-md-6.col-lg-3.work-item(data-work="1")
-              .work-card
-                .work-card-image
-                  img(src="https://via.placeholder.com/400x400" alt="Project 1")
-                .work-card-title Project Title 1
-              .work-details
-                .work-details-content
-                  .work-details-header
-                    h3 Project Title 1
-                    button.close-btn ×
-                  .work-details-body
-                    .work-details-image
-                      img(src="https://via.placeholder.com/800x600" alt="Project 1 Detail")
-                    .work-details-text
-                      p.work-description This is a detailed description of Project 1. Here you can explain the concept, your role, technologies used, and the outcome of the project.
-                      .work-meta
-                        .work-meta-item
-                          strong Client:
-                          span  Client Name
-                        .work-meta-item
-                          strong Year:
-                          span  2024
-                        .work-meta-item
-                          strong Role:
-                          span  Design & Development
-            
-            //- Work Item 2
-            .col-sm-12.col-md-6.col-lg-3.work-item(data-work="2")
-              .work-card
-                .work-card-image
-                  img(src="https://via.placeholder.com/400x400" alt="Project 2")
-                .work-card-title Project Title 2
-              .work-details
-                .work-details-content
-                  .work-details-header
-                    h3 Project Title 2
-                    button.close-btn ×
-                  .work-details-body
-                    .work-details-image
-                      img(src="https://via.placeholder.com/800x600" alt="Project 2 Detail")
-                    .work-details-text
-                      p.work-description This is a detailed description of Project 2. Here you can explain the concept, your role, technologies used, and the outcome of the project.
-                      .work-meta
-                        .work-meta-item
-                          strong Client:
-                          span  Client Name
-                        .work-meta-item
-                          strong Year:
-                          span  2024
-                        .work-meta-item
-                          strong Role:
-                          span  Design & Development
-            
-            //- Work Item 3
-            .col-sm-12.col-md-6.col-lg-3.work-item(data-work="3")
-              .work-card
-                .work-card-image
-                  img(src="https://via.placeholder.com/400x400" alt="Project 3")
-                .work-card-title Project Title 3
-              .work-details
-                .work-details-content
-                  .work-details-header
-                    h3 Project Title 3
-                    button.close-btn ×
-                  .work-details-body
-                    .work-details-image
-                      img(src="https://via.placeholder.com/800x600" alt="Project 3 Detail")
-                    .work-details-text
-                      p.work-description This is a detailed description of Project 3. Here you can explain the concept, your role, technologies used, and the outcome of the project.
-                      .work-meta
-                        .work-meta-item
-                          strong Client:
-                          span  Client Name
-                        .work-meta-item
-                          strong Year:
-                          span  2024
-                        .work-meta-item
-                          strong Role:
-                          span  Design & Development
-            
-            //- Work Item 4
-            .col-sm-12.col-md-6.col-lg-3.work-item(data-work="4")
-              .work-card
-                .work-card-image
-                  img(src="https://via.placeholder.com/400x400" alt="Project 4")
-                .work-card-title Project Title 4
-              .work-details
-                .work-details-content
-                  .work-details-header
-                    h3 Project Title 4
-                    button.close-btn ×
-                  .work-details-body
-                    .work-details-image
-                      img(src="https://via.placeholder.com/800x600" alt="Project 4 Detail")
-                    .work-details-text
-                      p.work-description This is a detailed description of Project 4. Here you can explain the concept, your role, technologies used, and the outcome of the project.
-                      .work-meta
-                        .work-meta-item
-                          strong Client:
-                          span  Client Name
-                        .work-meta-item
-                          strong Year:
-                          span  2024
-                        .work-meta-item
-                          strong Role:
-                          span  Design & Development
-      
-      //- About Section
-      section#about
-        .container
-          .row
-            .col-sm-12
-              h2 About
-              p Your about content goes here...
-      
-      //- Contact Section
-      section#contact
-        .container
-          .row
-            .col-sm-12
-              h2 Contact
-              p Your contact information goes here...
-    
-    //- JavaScript
-    script.
-      document.addEventListener('DOMContentLoaded', function() {
-        const burgerMenu = document.getElementById('burgerMenu');
-        const mobileNav = document.getElementById('mobileNav');
-        const overlay = document.getElementById('overlay');
-        const mobileLinks = document.querySelectorAll('.mobile-nav a');
-        
-        // Toggle mobile menu
-        function toggleMenu() {
-          burgerMenu.classList.toggle('active');
-          mobileNav.classList.toggle('active');
-          overlay.classList.toggle('active');
-        }
-        
-        burgerMenu.addEventListener('click', toggleMenu);
-        overlay.addEventListener('click', toggleMenu);
-        
-        // Close menu when clicking a link
-        mobileLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            toggleMenu();
-          });
-        });
-        
-        // Smooth scroll for desktop nav
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-          link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-              const headerOffset = 90;
-              const elementPosition = target.offsetTop;
-              const offsetPosition = elementPosition - headerOffset;
-              
-              window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-              });
-            }
-          });
-        });
-        
-        // Work Grid Functionality
-        const workItems = document.querySelectorAll('.work-item');
-        const workGrid = document.getElementById('workGrid');
-        
-        workItems.forEach(item => {
-          const card = item.querySelector('.work-card');
-          const closeBtn = item.querySelector('.close-btn');
-          
-          // Open work details
-          card.addEventListener('click', function() {
-            // If this item is already expanded, do nothing
-            if (item.classList.contains('expanded')) {
-              return;
-            }
-            
-            // Close all other expanded items
-            workItems.forEach(otherItem => {
-              otherItem.classList.remove('expanded');
-              otherItem.style.flexBasis = '';
-              otherItem.style.maxWidth = '';
-            });
-            
-            // Expand this item to full width
-            item.classList.add('expanded');
-            item.style.flexBasis = '100%';
-            item.style.maxWidth = '100%';
-            
-            // Smooth scroll to the top of the work section
-            setTimeout(() => {
-              const workSection = document.getElementById('work');
-              const headerOffset = 90;
-              const elementPosition = workSection.offsetTop;
-              const offsetPosition = elementPosition - headerOffset;
-              
-              window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-              });
-            }, 100);
-          });
-          
-          // Close work details
-          closeBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            item.classList.remove('expanded');
-            item.style.flexBasis = '';
-            item.style.maxWidth = '';
-          });
-        });
-      });
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		title Portfolio
+
+		//- Cirrus UI CSS
+		link(rel="stylesheet" href="https://unpkg.com/cirrus-ui@0.7.1/dist/cirrus.min.css")
+		//- Custom CSS
+		link(rel="stylesheet" href="/css/styles.css")
+
+	body
+		include templates/header.pug
+
+		//- Main Content
+		main
+			//- tagline Section
+			include templates/tagline.pug 
+
+			//- About Section
+			include templates/about.pug
+
+			//- Work Section
+			include templates/work.pug
+
+			//- Contact Section
+			include templates/contact.pug
+
+		//- JavaScript
+		script(src="/js/scripts.js") 

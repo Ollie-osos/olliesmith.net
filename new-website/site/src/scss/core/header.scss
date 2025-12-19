@@ -1,0 +1,137 @@
+@import '../../helpers/_size';
+@import	'variables';
+/* Header Styles */
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: transparent;
+	z-index: 1000;
+	padding: 1.5rem 0;
+}
+
+.header-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.logo-placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 40px;
+	color: $black;
+	font-family: $font;
+    a{
+        color: $black;
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+        }
+        &:focus {
+            outline: none;
+        }   
+    }
+}
+
+/* Desktop Navigation */
+nav.desktop-nav {
+	display: flex;
+	gap: 2rem;
+}
+
+nav.desktop-nav a {
+	text-decoration: none;
+	color: $black;
+	font-size: 25px;
+	transition: all 0.3s ease;
+	font-weight: 200;
+    &:hover {
+        color: $dark-gold;   
+    }
+}
+
+/* Burger Menu */
+.burger-menu {
+	display: none;
+	flex-direction: column;
+	gap: 5px;
+	cursor: pointer;
+	width: 30px;
+	height: 24px;
+	z-index: 1001;
+}
+
+.burger-menu span {
+	display: block;
+	width: 100%;
+	height: 3px;
+	background: #333;
+	transition: all 0.3s ease;
+}
+
+.burger-menu.active span:nth-child(1) {
+	transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger-menu.active span:nth-child(2) {
+	opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+	transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Navigation */
+nav.mobile-nav {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	width: 280px;
+	height: 100vh;
+	background: white;
+	box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+	transition: right 0.3s ease;
+	z-index: 999;
+	padding: 6rem 2rem 2rem;
+}
+
+nav.mobile-nav.active {
+	right: 0;
+}
+
+nav.mobile-nav a {
+	display: block;
+	text-decoration: none;
+	color: $black;
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+	font-family: $font-alt;
+	transition: color 0.3s ease;
+}
+
+nav.mobile-nav a:hover {
+	color: #666;
+}
+
+/* Overlay */
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+	z-index: 998;
+}
+
+.overlay.active {
+	opacity: 1;
+	visibility: visible;
+}

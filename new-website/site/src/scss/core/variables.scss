@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+@font-face {
+	font-family: 'Romie';
+	src: url('/fonts/Romie-Regular.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$font: 'Romie', sans-serif;
+$font-alt: 'Nunito Sans', sans-serif;
+
+$gold: #c5a47e;
+$dark-gold: #a67c52;
+$black: #000;
+$grey: #888;
+
+.gold-text {
+    color: $gold;   
+}
