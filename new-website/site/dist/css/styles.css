@@ -251,6 +251,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
   background: white;
   color: #000;
+  font-weight: 200;
 }
 
 p {
@@ -290,6 +291,7 @@ a {
   text-decoration: none;
   transition: all 0.3s;
   color: #a67c52;
+  font-weight: 200;
 }
 a:hover {
   color: #000;
@@ -347,9 +349,9 @@ section {
 }
 
 .section-title {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  font-weight: normal;
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+  font-weight: 200;
 }
 
 .work-grid {

@@ -17,6 +17,7 @@ body {
 	font-family: $font-alt;
 	background: white;
 	color: $black;
+	font-weight: 200;
 }
 
 p{
@@ -50,6 +51,7 @@ a {
     text-decoration: none;
     transition: all 0.3s;
 	color: $dark-gold;
+	font-weight: 200;
     &:hover {
         color: $black;
 		text-decoration: underline;
@@ -107,9 +109,9 @@ section {
 }
 
 .section-title {
-	font-size: 2.5rem;
-	margin-bottom: 3rem;
-	font-weight: normal;
+	font-size: 2.3rem;
+	margin-bottom: 2rem;
+	font-weight: 200;
 }
 
 .work-grid {
