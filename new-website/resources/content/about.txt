@@ -8,3 +8,15 @@ Hi, My name is Michael 'Ollie' Smith, a web developer and digital product specia
 I’ve led frontend teams, collaborated closely with designers and stakeholders, and delivered robust digital platforms across the arts, public, and cultural sectors. From custom WordPress builds and system integrations to API-driven services, I focus on making complex systems simple and reliable.
 
 Alongside hands-on development, I studied Product Management at King’s College London, graduating with distinction—strengthening my approach to digital strategy, prioritisation, and delivery.
+
+
+New 
+
+
+Hi, my name is Michael “Ollie” Smith — a web developer and digital product specialist with over 15 years of experience building accessible, user-focused websites and digital platforms. My work sits at the intersection of software development, UX, and product strategy, with a strong emphasis on clarity, performance, and long-term maintainability.
+
+I’ve led frontend teams, collaborated closely with designers and stakeholders, and delivered robust digital products for arts organisations, cultural institutions, public-sector bodies, and purpose-led teams. From custom WordPress builds and complex system integrations to API-driven services, I focus on making complex systems simple, resilient, and genuinely useful.
+
+I care deeply about accessibility, inclusive design, and building things that work well for real people, not just shipping features. My approach is grounded in user needs, clear outcomes, and sustainable delivery — ensuring digital work continues to create value long after launch.
+
+Alongside hands-on development, I studied Product Management at King’s College London, graduating with distinction. This strengthened my practice around digital strategy, prioritisation, stakeholder alignment, and delivering the right things at the right time.

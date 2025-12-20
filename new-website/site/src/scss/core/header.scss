@@ -25,8 +25,8 @@ header {
 		font-size: 40px;
 		color: $black;
 		font-family: $font;
-
 		a {
+			font-weight: 200;
 			color: $black;
 			text-decoration: none;
 
@@ -36,6 +36,7 @@ header {
 
 			&:focus {
 				outline: none;
+				box-shadow: none;
 			}
 		}
 	}
@@ -53,9 +54,10 @@ header {
 		transition: all 0.3s ease;
 		font-weight: 200;
 
-		&:hover {
+		&:hover, &:focus {
 			color: $dark-gold;
 		}
+		
 	}
 }
 

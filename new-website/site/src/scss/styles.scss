@@ -16,7 +16,14 @@ html {
 body {
 	font-family: $font-alt;
 	background: white;
-	color: #333;
+	color: $black;
+}
+
+p{
+	font-size: 20px;
+	&.small{
+		font-size: 14px;
+	}
 }
 
 .container {
@@ -48,6 +55,10 @@ a {
 		text-decoration: underline;
         transition: all 0.3s;
     }
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
 }
 
 h1,
@@ -74,6 +85,10 @@ h2.tagline {
 	font-weight: 100;
 	margin-bottom: 1rem;
 	color: $grey;
+}
+
+h4{
+	font-size: 22px;
 }
 
 /* Main Content */

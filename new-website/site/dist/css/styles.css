@@ -65,6 +65,7 @@ header .logo-placeholder {
   font-family: "Romie", sans-serif;
 }
 header .logo-placeholder a {
+  font-weight: 200;
   color: #000;
   text-decoration: none;
 }
@@ -73,6 +74,7 @@ header .logo-placeholder a:hover {
 }
 header .logo-placeholder a:focus {
   outline: none;
+  box-shadow: none;
 }
 header {
   /* Desktop Navigation */
@@ -88,7 +90,7 @@ header nav.desktop-nav a {
   transition: all 0.3s ease;
   font-weight: 200;
 }
-header nav.desktop-nav a:hover {
+header nav.desktop-nav a:hover, header nav.desktop-nav a:focus {
   color: #a67c52;
 }
 
@@ -193,19 +195,21 @@ nav.mobile-nav a:hover {
 
 /* footer Styles */
 footer {
-  background: #101B2F;
-  padding: 1.5rem 0;
-  color: white;
+  background: #242830;
+  padding: 2rem 0;
+  color: #edebe8;
 }
 footer .logo-placeholder {
   display: flex;
   font-size: 32px;
-  color: white;
+  color: #edebe8;
   font-family: "Romie", sans-serif;
 }
 footer .logo-placeholder a {
-  color: white;
+  color: #edebe8;
   text-decoration: none;
+  padding: 0;
+  font-weight: 200;
 }
 footer .logo-placeholder a:hover {
   text-decoration: none;
@@ -214,7 +218,7 @@ footer .logo-placeholder a:focus {
   outline: none;
 }
 footer a:hover {
-  color: white;
+  color: #edebe8;
   text-decoration: none;
 }
 footer ul {
@@ -222,8 +226,15 @@ footer ul {
   margin-left: 0;
   padding-left: 0;
 }
-footer .quick-links {
-  justify-content: flex-end;
+@media screen and (min-width: 1024px) {
+  footer .quick-links {
+    text-align: right;
+  }
+}
+footer .quick-links h3 {
+  padding-top: 10px;
+  margin-bottom: 0;
+  padding-bottom: 10px;
 }
 
 * {
@@ -239,7 +250,14 @@ html {
 body {
   font-family: "Nunito Sans", sans-serif;
   background: white;
-  color: #333;
+  color: #000;
+}
+
+p {
+  font-size: 20px;
+}
+p.small {
+  font-size: 14px;
 }
 
 .container {
@@ -278,6 +296,10 @@ a:hover {
   text-decoration: underline;
   transition: all 0.3s;
 }
+a:focus {
+  outline: none;
+  box-shadow: none;
+}
 
 h1,
 h2,
@@ -303,6 +325,10 @@ h2.tagline {
   font-weight: 100;
   margin-bottom: 1rem;
   color: #888;
+}
+
+h4 {
+  font-size: 22px;
 }
 
 /* Main Content */
@@ -506,19 +532,21 @@ section {
 
 /* footer Styles */
 footer {
-  background: #101B2F;
-  padding: 1.5rem 0;
-  color: white;
+  background: #242830;
+  padding: 2rem 0;
+  color: #edebe8;
 }
 footer .logo-placeholder {
   display: flex;
   font-size: 32px;
-  color: white;
+  color: #edebe8;
   font-family: "Romie", sans-serif;
 }
 footer .logo-placeholder a {
-  color: white;
+  color: #edebe8;
   text-decoration: none;
+  padding: 0;
+  font-weight: 200;
 }
 footer .logo-placeholder a:hover {
   text-decoration: none;
@@ -527,7 +555,7 @@ footer .logo-placeholder a:focus {
   outline: none;
 }
 footer a:hover {
-  color: white;
+  color: #edebe8;
   text-decoration: none;
 }
 footer ul {
@@ -535,8 +563,15 @@ footer ul {
   margin-left: 0;
   padding-left: 0;
 }
-footer .quick-links {
-  justify-content: flex-end;
+@media screen and (min-width: 1024px) {
+  footer .quick-links {
+    text-align: right;
+  }
+}
+footer .quick-links h3 {
+  padding-top: 10px;
+  margin-bottom: 0;
+  padding-bottom: 10px;
 }
 /* Spacing */
 /* Fonts */
@@ -581,6 +616,7 @@ header .logo-placeholder {
   font-family: "Romie", sans-serif;
 }
 header .logo-placeholder a {
+  font-weight: 200;
   color: #000;
   text-decoration: none;
 }
@@ -589,6 +625,7 @@ header .logo-placeholder a:hover {
 }
 header .logo-placeholder a:focus {
   outline: none;
+  box-shadow: none;
 }
 header {
   /* Desktop Navigation */
@@ -604,7 +641,7 @@ header nav.desktop-nav a {
   transition: all 0.3s ease;
   font-weight: 200;
 }
-header nav.desktop-nav a:hover {
+header nav.desktop-nav a:hover, header nav.desktop-nav a:focus {
   color: #a67c52;
 }
 

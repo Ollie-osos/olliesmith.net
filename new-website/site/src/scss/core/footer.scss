@@ -4,16 +4,18 @@
 /* footer Styles */
 footer {
 	background: $blue-grey;
-	padding: 1.5rem 0;
-    color: white;
+	padding: 2rem 0;
+    color: $white-gold;
     .logo-placeholder {
         display: flex;
         font-size: 32px;
-        color: white;
+        color: $white-gold;
         font-family: $font;
         a{
-            color: white;
+            color: $white-gold;
             text-decoration: none;
+            padding: 0;
+            font-weight: 200;
             &:hover {
                 text-decoration: none;
             }
@@ -23,7 +25,7 @@ footer {
         }
     }
     a:hover{
-        color:white;
+        color:$white-gold;
         text-decoration: none;
     }
     ul{
@@ -32,7 +34,14 @@ footer {
         padding-left: 0;
     }
     .quick-links{
-        justify-content: flex-end;
+        @include screen-above('md') {
+            text-align: right;
+        }
+        h3{
+            padding-top: 10px;
+            margin-bottom: 0;
+            padding-bottom: 10px;
+        }
     }
 }
 

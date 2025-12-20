@@ -11,11 +11,11 @@
     <header>
       <div class="header-container container" id="home">
         <div class="logo-placeholder"><a href="#home">Ollie Smith<span class="gold-text">.</span></a></div>
-        <nav class="desktop-nav"><a href="#about">About</a><a href="#work">Work</a><a href="#connect">Connect </a></nav>
+        <nav class="desktop-nav"><a href="#about">About</a><a href="#work">Portfolio</a><a href="#what">What I do</a><a href="#connect">Connect </a></nav>
         <div class="burger-menu" id="burgerMenu"><span></span><span></span><span></span></div>
       </div>
     </header>
-    <nav class="mobile-nav" id="mobileNav"><a href="#about">About</a><a href="#work">Work</a><a href="#connect">Connect</a></nav>
+    <nav class="mobile-nav" id="mobileNav"><a href="#about">About</a><a href="#work">Portfolio</a><a href="#what">What I do</a><a href="#connect">Connect</a></nav>
     <div class="overlay" id="overlay"></div>
     <main>
       <section id="tagline">
@@ -32,10 +32,13 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
-              <h3>👋🏾 Hi, I'm Ollie.</h3>
-              <p>I am a web developer and digital product specialist with over 15 years of experience building accessible, user-focused websites. My work sits at the intersection of software development, UX, and digital strategy, with a strong focus on clarity, performance, and long-term maintainability.</p>
-              <p>I’ve led frontend teams, collaborated closely with designers and stakeholders, and delivered robust digital platforms across the arts, public, and cultural sectors. From custom WordPress builds and system integrations to API-driven services, I focus on making complex systems simple and reliable.</p>
-              <p>Alongside hands-on development, I studied Product Management at King’s College London, graduating with distinction—strengthening my approach to digital strategy, prioritisation, and delivery.</p>
+              <h2 class="section-title">👋🏾 Hi, I'm Ollie.</h2>
+              <p>I am a web developer and digital product specialist with over 15 years of experience building accessible, user-focused websites and digital platforms. My work sits at the intersection of software development, UX, and product strategy, with a strong emphasis on clarity, performance, and long-term maintainability.</p>
+              <p>I’ve led frontend teams, collaborated closely with designers and stakeholders, and delivered robust digital products for <strong>arts organisations, cultural institutions, public-sector bodies, and purpose-led teams.</strong> From custom WordPress builds and complex system integrations to API-driven services, I focus on making complex systems simple, resilient, and genuinely useful.</p>
+              <p>I care deeply about <strong>accessibility, inclusive design, and building things that work well for real people.</strong> My approach is grounded in user needs, clear outcomes, and sustainable delivery, ensuring digital work continues to create value long after launch.</p>
+              <p>Alongside hands-on development, I studied <strong>Product Management at King’s College London, graduating with distinction.</strong> This strengthened my practice around digital strategy, prioritisation, stakeholder alignment, and delivering the right things at the right time.</p>
+              <p class="small"><i>* Outside of this I'm a keen musician and have a few projects I am involved in 🎸. Feel free to ask me more if this is your kinda thing!</i></p>
+              <h2 class="pt-4"><a href="#connect">Lets work together. </a></h2>
             </div>
           </div>
         </div>
@@ -44,7 +47,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
-              <h2 class="section-title">Work</h2>
+              <h2 class="section-title">Portfolio</h2>
             </div>
           </div>
           <div class="row work-grid" id="workGrid">
@@ -151,13 +154,48 @@
           </div>
         </div>
       </section>
+      <section id="what">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12"> 
+              <h2 class="section-title pb-3">I specialise in:</h2>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <h4>Web Development</h4>
+              <ul> 
+                <li> WordPress (custom themes, ACF, CPTs)</li>
+                <li> APIs & integrations</li>
+                <li> Front-end (HTML, CSS, JS, React, Angular, Vue)</li>
+                <li> On-page performance & SEO optimization      </li>
+                <li> Accessibility-first development</li>
+                <li> Website maintenance & support</li>
+                <li> E-commerce (WooCommerc, Shopfiy)</li>
+                <li> Website hosting & migrations</li>
+              </ul>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <h4>Digital Product Management</h4>
+              <ul> 
+                <li> Product strategy & roadmapping</li>
+                <li> Agile methodologies (Scrum, Kanban)</li>
+                <li> Stakeholder management</li>
+                <li> User research & testing</li>
+                <li> UX/UI design collaboration</li>
+                <li> Data analysis & performance tracking</li>
+                <li> Cross-functional team leadership</li>
+                <li> Market & competitor analysis</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="connect"> 
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
-              <h3>Let's work together 😊</h3>
-              <p>The best way to connect with me is via my email <a href="mailto:hello@olliesmith.net">hello@olliesmith.net</a></p>
-              <p>You can also find me on <a href="https://www.linkedin.com/in/olliesmith" target="_blank">LinkedIn</a>, or if you can drop me a line on <a href="tel:+447843923628" target="_blank">+44 7843 923 628</a>.</p>
+              <h2 class="section-title">Let's work together 😊</h2>
+              <p>The best way to connect with me is via my email <a href="mailto:hello@olliesmith.net">hello@olliesmith.net</a>.</p>
+              <p>You can also find me on <a href="https://www.linkedin.com/in/olliesmith" target="_blank">LinkedIn</a>, or if you want, you can send me a message on <a href="tel:+447843923628" target="_blank">+44 7843 923 628</a>.</p>
               <p>I look forward to hearing from you!</p>
             </div>
           </div>
@@ -167,26 +205,27 @@
     <footer>
       <div class="container">
         <div class="row"> 
-          <div class="col-md-6 col-sm-12">
+          <div class="col-md-6 col-sm-12 u-flex u-flex-column">
             <div class="logo-placeholder"><a href="#home">Ollie Smith<span class="gold-text">.</span></a></div>
             <ul>
               <li> <a href="#about">About</a></li>
-              <li> <a href="#work">Work</a></li>
+              <li> <a href="#work">Portfolio</a></li>
+              <li> <a href="#what">What I do</a></li>
               <li> <a href="#connect">Connect </a></li>
             </ul>
           </div>
-          <div class="col-md-6 col-sm-12 quick-links">
+          <div class="col-md-6 col-sm-12 quick-links u-flex u-flex-column">
             <h3>Quick Links</h3>
             <ul class="links">
-              <li> <a mailto="hello@olliesmith.net" target="_blank">hello@ollismith.net</a></li>
+              <li> <a href="mailto:hello@olliesmith.net" target="_blank">hello@olliesmith.net</a></li>
               <li> <a href="https://www.linkedin.com/in/olliesmith" target="_blank">LinkedIn</a></li>
-              <li> <a tel="+447843923628" target="_blank">Tel: +44 7843 923 628</a></li>
+              <li> <a href="tel:+447843923628" target="_blank">Tel: +44 7843 923 628</a></li>
               <li> <a href="https://www.linkedin.com/in/olliesmith" target="_blank">Product Manager C.V.</a></li>
               <li> <a href="https://www.linkedin.com/in/olliesmith" target="_blank">Web Developer C.V.</a></li>
             </ul>
           </div>
-          <div class="col-sm-12">
-            <p>© <span id="year"></span> Ollie Smith<span class="gold-text">.</span> All rights reserved.</p>
+          <div class="col-sm-12 pt-8">
+            <p class="small">© <span id="year"></span> Ollie Smith<span class="gold-text">.</span> All rights reserved.</p>
           </div>
         </div>
       </div>
