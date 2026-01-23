@@ -1,20 +1,159 @@
 Miguel chevalier
 
+Miguel Chevalier — Headless Web Application
+
+I developed a bespoke web application for internationally renowned digital artist Miguel Chevalier, replacing an outdated Drupal website with a modern, secure, and easily maintainable platform. After analysing the technical and editorial requirements, I implemented a headless architecture using Angular for the front end and Contentful as the CMS, enabling flexible content management and long-term scalability. The application was built in TypeScript, with a Node.js backend integrating RESTful APIs and GraphQL to efficiently fetch and manage content from Contentful. The result was a fast, robust web application designed to showcase complex visual work while remaining secure, performant, and simple to update.
+
+Key outcomes
+
+Modern headless web application replacing legacy Drupal site
+
+Scalable, secure architecture tailored for high-profile digital artwork
+
+Easy-to-manage content workflows using Contentful
+
+Improved performance and long-term maintainability
+
+Skills & technologies used
+
+Angular & TypeScript
+
+Node.js backend development
+
+Headless CMS architecture (Contentful)
+
+REST APIs & GraphQL
+
+Front-end performance optimisation
+
+Secure application architecture
 
 
-Open Eye Gallery
+
+
+Open Eye Gallery — Website Redevelopment
+
+I led the digital product delivery for Open Eye Gallery’s new WordPress website, working collaboratively with a designer and multiple internal stakeholder groups. The project began with UX workshops and user research to shape a clear product roadmap, define delivery milestones, and prioritise features based on user and organisational needs. A key outcome of this process was a bespoke “What’s On” events filtering system, designed to improve discoverability and usability for diverse audiences. Accessibility was embedded throughout the project, with the site built to WCAG 2.1 AA standards and tested across devices and assistive technologies. The result was a scalable, accessible, and future-proof platform that supports both editorial workflows and inclusive public access to cultural content.
+
+Key outcomes
+
+WCAG 2.1 AA–compliant, accessibility-first website
+
+Bespoke “What’s On” events filtering system informed by user research
+
+Clear product roadmap with defined milestones and delivery phases
+
+Improved content structure and usability across legacy and new content
+
+Custom WordPress backend compatible with historical data
+
+Structured testing and QA supporting a smooth public launch
+
+Skills & services used
+
+WordPress (custom themes, ACF, CPTs)
+
+Accessibility-first development (WCAG 2.1 AA)
+
+Digital product strategy & roadmapping
+
+UX research, workshops & user testing
+
+Stakeholder management
+
+Agile delivery (Scrum / Kanban)
+
+Front-end development (HTML, CSS, JavaScript)
+
+Data migration & backend architecture
+
+Website QA, launch & ongoing support
 
 
 
-Ceri hand
+
+TreeStory — Community Storytelling Platform
+
+I led the digital product delivery for TreeStory, an Arts Council England–funded community engagement platform designed to help people share photographs, locations, and personal stories about trees across Liverpool. Working with a designer and a freelance developer, I ran UX workshops to define user personas, map journeys, and establish a clear information architecture informed by user research and competitor analysis. I set the product roadmap, prioritised features, and managed delivery using agile principles. The platform was built using WordPress, custom JavaScript, and REST API integrations, with accessibility and usability embedded throughout to support inclusive participation. Alongside delivery, I developed and executed a go-to-market strategy that drove community engagement, local press coverage, and a physical street exhibition.
+
+Key outcomes
+
+Arts Council England–funded community engagement platform
+
+User-led information architecture shaped through UX workshops and research
+
+Location-based storytelling using maps and REST API integrations
+
+Accessible, easy-to-use submission flow for stories and images
+
+Clear product roadmap with phased delivery and stakeholder alignment
+
+Successful public launch supported by local press and street exhibition
+
+Skills & services used
+
+Digital product strategy & roadmapping
+
+UX research, workshops & user testing
+
+Stakeholder management & agile delivery
+
+WordPress (custom themes, ACF, CPTs)
+
+REST APIs & third-party integrations (including mapping)
+
+Front-end development (HTML, CSS, JavaScript)
+
+Accessibility-first UX & content design
+
+Go-to-market strategy & launch planning
 
 
 
-Treestory
+
+
+Pixel Flowers
 
 
 
-Freelance
+Miguel Chevalier — Interactive Digital Installation (Kunsthalle Munich)
+
+As part of ongoing collaboration with Miguel Chevalier, I delivered a commissioned interactive digital artwork for Kunsthalle Munich, working alongside a designer and a Unity developer. The project enabled users to create unique 3D digital flowers remotely, select a date and time, and have their work displayed within a live, evolving digital garden inside the gallery. I was responsible for the web platform architecture, user management, and system integrations, as well as on-site deployment in Munich, where I installed and configured the application on native gallery machines and set up the live exhibition environment. The platform was designed to scale internationally and support high volumes of user-generated content.
 
 
+Key outcomes
 
+Interactive digital installation exhibited at Kunsthalle Munich
+
+Remote user participation through 3D flower creation and scheduling
+
+WordPress-based user management with GDPR-compliant registration
+
+Multilingual (i18n) support for international audiences
+
+Custom API integration between WordPress and Unity application
+
+On-site installation, deployment, and live gallery setup
+
+50,000+ unique users since launch
+
+Planned future exhibitions in the Netherlands and South Korea
+
+
+Skills & technologies used
+
+WordPress (custom development & user management)
+
+APIs & system integrations (WordPress ↔ Unity)
+
+JavaScript & custom application logic
+
+Internationalisation (i18n)
+
+GDPR & consent management
+
+Technical research & system architecture
+
+Deployment, installation & live environment setup
+
+Cross-disciplinary collaboration (design & Unity development)

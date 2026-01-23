@@ -295,12 +295,17 @@ a {
 }
 a:hover {
   color: #000;
-  text-decoration: underline;
   transition: all 0.3s;
 }
 a:focus {
   outline: none;
   box-shadow: none;
+}
+a.tagline-link {
+  border-bottom: 1px solid #a67c52;
+}
+a.tagline-link:hover {
+  border-bottom: 1px solid #000;
 }
 
 h1,
@@ -315,7 +320,7 @@ h6 {
 h1.tagline {
   font-family: "Nunito Sans", sans-serif;
   font-size: 27px;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 2rem;
   margin-top: 1rem;
   color: #000;
@@ -339,7 +344,7 @@ main {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 60vh;
   padding: 4rem 0;
 }
 
